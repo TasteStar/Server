@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sitemesh>
+  <mapping path="/ex/*" decorator="/jsp/decorators/use/inner.jsp"/>
+  
+  
+
+  
+	<!-- Exclude path from decoration. -->
+	<mapping path="/resources/*" exclue="true" />
+	<mapping path="*.html"       exclue="true" />
+	<mapping path="*.htm"        exclue="true" />
+	<mapping path="*.js"         exclue="true" />
+	<mapping path="*.css"        exclue="true" />
+	
+</sitemesh>

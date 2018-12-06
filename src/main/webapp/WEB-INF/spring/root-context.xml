@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	
+	<!-- <util:properties id="wfx" location="classpath:webflix.properties" /> -->
+	<!-- <context:property-placeholder location="classpath:webflix.properties" /> -->
+	<context:component-scan base-package="com.tstar" />
+	
+	<!-- 	<context:property-placeholder location="WEB-INF/*.properties" /> -->
+	
+<!-- 	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+		<constructor-arg ref="dataSourceSpied" />
+		<property name="logFormatter">
+			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+				<property name="loggingType" value="MULTI_LINE" />
+				<property name="sqlPrefix"   value="#### SQL ####&#xD;&#xA;" /> 
+				<property name="sqlPrefix" value="SQL         :  " />
+			</bean>
+		</property>
+	</bean> -->
+	<!-- 
+		<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.myclass}" />
+		<property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/example" /> 
+		<property name="username" value="root" />
+		<property name="password" value="km911220" />
+		</bean>
+
+ 		<tx:annotation-driven transaction-manager="transactionManager" />
+ 		
+    	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:com/wfx/ksm/mappers/**/*.xml" />
+		</bean>	
+		
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
+			destroy-method="clearCache">
+			<constructor-arg ref="sqlSessionFactory" name="sqlSessionFactory" />
+		</bean>		 -->
+
+<!-- HLS DATA -->
+<!-- <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+        <property name="driverClassName" value="${mydb.myclass}" />
+        <property name="url" value="${mydb.url}" />
+        <property name="username" value="${mydb.username}" />
+        <property name="password" value="${mydb.password}" />
+</bean>
+ <bean id="sqlSessionFactory2" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource2" />
+        <property name="mapperLocations" value="classpath:com/wfx/ksm/mappers/mysql/test/*.xml" />
+ </bean>
+ <bean id="sqlSession2" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg ref="sqlSessionFactory2" />
+ </bean>
+ 
+<bean id="transactionManager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       <property name="dataSource" ref="dataSource2"/>
+</bean>
+ 
+<tx:advice id="txAdvice2" transaction-manager="transactionManager2">
+    <tx:attributes>
+        <tx:method name="save*" rollback-for="Exception"/>
+        <tx:method name="update*" rollback-for="Exception"/>
+        <tx:method name="delete*" rollback-for="Exception"/>
+    </tx:attributes>
+</tx:advice>
+ -->
+
+</beans>
